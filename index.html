@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhojan room · 3D mock-up</title>
+<style>
+:root{--bg:#faf6ef;--fg:#2b2118;--card:#fffdf8;--line:#e2d6c2;--acc:#6b1f2a;--pill:rgba(255,253,248,.92);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1613;--fg:#f1e7d8;--card:#2a211c;--line:#4a3b31;--acc:#e0a3ab;--pill:rgba(42,33,28,.92);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1613;--fg:#f1e7d8;--card:#2a211c;--line:#4a3b31;--acc:#e0a3ab;--pill:rgba(42,33,28,.92);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 Georgia,"Times New Roman",serif}
+header{padding:18px 16px 6px;max-width:1100px;margin:auto}
+h1{margin:0;font-size:24px}h1 i{color:var(--acc)}
+p.s{margin:4px 0 0;opacity:.75;font:13px/1.4 system-ui,sans-serif}
+.bar{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;max-width:1100px;margin:auto;font:13px system-ui,sans-serif}
+button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:inherit;cursor:pointer}
+button.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+#v{position:relative;max-width:1100px;margin:0 16px;height:64vh;min-height:380px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+@media(min-width:1132px){#v{margin:0 auto}}
+canvas{display:block}
+.lb{position:absolute;transform:translate(-50%,-100%);background:var(--pill);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font:11px/1.3 system-ui,sans-serif;white-space:nowrap;pointer-events:none}
+.tmp{border-style:dashed;border-color:var(--acc);font-style:italic}
+.fl{font-size:10px;padding:1px 5px;background:var(--acc);color:var(--bg);border-color:var(--acc)}
+table{border-collapse:collapse;font-size:12px;margin:6px 0}td,th{border:1px solid var(--line);padding:3px 7px;text-align:left}
+.key{max-width:1100px;margin:12px auto;padding:0 16px 24px;font:13px/1.5 system-ui,sans-serif}
+.key ul{margin:6px 0;padding-left:18px}
+</style></head><body>
+<header><h1><i>Bhojan</i> room · 3D mock-up</h1>
+<p class="s">10 ft × 24 ft Bhojan room, dimensions from the exhibit plan · drag to orbit, scroll to zoom</p></header>
+<div class="bar" id="bar"></div>
+<div id="v"></div>
+<div class="key"><b>Kitchen setup (south wall)</b><table><tr><th>Item</th><th>Qty</th><th>Dimensions</th><th>Status</th></tr><tr><td>Kitchen counter</td><td>1</td><td>marble top 100″ × 26″ × ¾″ on base 8′ × 2′ × 3′</td><td>As on the model</td></tr><tr><td>Counter base sections</td><td>2</td><td>4′ × 2′ × 3′ each</td><td>Not used, model keeps its counter</td></tr><tr><td>Wall shelves</td><td>2</td><td>4′ × 10″ × 1″</td><td>Not used, model keeps its 3 shelves</td></tr><tr><td>Steel/brass utensils</td><td>10</td><td>4–14″</td><td>Suggested</td></tr><tr><td>Masala dabba</td><td>1</td><td>8″ ⌀ × 3″ H</td><td>Suggested</td></tr><tr><td>Glass snack jars</td><td>6</td><td>6″ ⌀ × 10″ H</td><td>Suggested</td></tr><tr><td>Covered spice jars</td><td>8</td><td>3″ ⌀ × 4″ H</td><td>Suggested</td></tr><tr><td>Kitchen runner rug</td><td>1</td><td>7′ × 2′</td><td>Plan</td></tr><tr><td>Counter lamp</td><td>1</td><td>10″ × 10″ × 16″</td><td>Suggested</td></tr><tr><td>Spice stickers</td><td>8</td><td>2″ ⌀</td><td>Plan</td></tr></table><b>Dining table setup (north side), from your drawing</b><table><tr><th>Item</th><th>Qty</th><th>Dimensions</th><th>Status</th></tr><tr><td>Dining table</td><td>1</td><td>6′ × 3′; frame 2′-6″ high, 2′-6¾″ with the top</td><td>Your drawing</td></tr><tr><td>Plywood top</td><td>1</td><td>72″ × 36″ × ¾″, 3″ overhang on all sides</td><td>Your drawing</td></tr><tr><td>2×4 base frame</td><td>1</td><td>66″ × 30″ × 30″ (5′-6″ × 2′-6″ × 2′-6″)</td><td>Your drawing</td></tr><tr><td>Long rails</td><td>2</td><td>66″</td><td>Cut list</td></tr><tr><td>Short rails</td><td>2</td><td>30″</td><td>Cut list</td></tr><tr><td>Top cross supports</td><td>2</td><td>30″, evenly spaced</td><td>Cut list</td></tr><tr><td>Bottom cross support</td><td>1</td><td>30″, centre</td><td>Cut list</td></tr><tr><td>Legs</td><td>4</td><td>30″</td><td>Cut list</td></tr><tr><td>Tablecloth</td><td>1</td><td>8′ × 5′, maroon</td><td>Suggested</td></tr><tr><td>Table runner</td><td>1</td><td>5′ × 1′</td><td>Suggested</td></tr><tr><td>Steel thali plates</td><td>4 sets</td><td>12–14″ ⌀</td><td>Suggested</td></tr><tr><td>Food display sets</td><td>4</td><td>fit on the thalis</td><td>Plan</td></tr><tr><td>Tasting trays</td><td>2</td><td>14″ × 10″</td><td>Plan</td></tr><tr><td>Recipe card stand</td><td>1</td><td>5″ × 7″</td><td>Suggested</td></tr><tr><td>Trash bin</td><td>1</td><td>12″ × 12″ × 18″</td><td>Suggested</td></tr></table><b>Panels and signs</b><table><tr><th>Item</th><th>Qty</th><th>Dimensions</th><th>Status</th></tr><tr><td>Bhojan educational panel</td><td>1</td><td>4′ × 6′, hung 1′-6″ to 7′-6″, west wall on the kitchen side</td><td>Plan</td></tr><tr><td>Annakut QR print</td><td>1</td><td>4″ × 4″</td><td>Suggested</td></tr><tr><td>Spice answer key</td><td>1</td><td>5″ × 7″</td><td>Suggested</td></tr><tr><td>Allergen labels</td><td>as needed</td><td>3″ × 2″</td><td>Plan</td></tr><tr><td>Recipe stand sign</td><td>1</td><td>5″ × 7″</td><td>Plan</td></tr><tr><td>Take-home recipe cards</td><td>~1,000</td><td>4″ × 6″</td><td>Plan</td></tr></table><b>Lighting (warm white, wall-mounted, nothing from above)</b><table><tr><th>Item</th><th>Qty</th><th>Dimensions</th><th>Status</th></tr><tr><td>URTOM 3W wall spotlights</td><td>5</td><td>dining side: 2 on the long north wall at 7′-6″ over the gallery, 1 at 6′-6″ on each short wall; kitchen side: 1 at 6′-6″ on the east wall by the counter; 3000K, plug-in</td><td>Site: 6′-6″ and 7′-6″, 3000K</td></tr><tr><td>Craftersmark picture bars</td><td>2</td><td>16″ long at 7′-9″, 2700K, cordless: one over the Bhojan panel, one over the three frames</td><td>Site: 16″, 7′-9″</td></tr><tr><td>Counter lamp</td><td>1</td><td>10″ × 10″ × 16″</td><td>Suggested</td></tr><tr><td>Power strip</td><td>1</td><td>12–16″ (drawn 14″)</td><td>Suggested</td></tr><tr><td>Extension cords</td><td>as needed</td><td>taped down at the wall base</td><td>Per outlets</td></tr></table><b>Room</b><table><tr><th>Item</th><th>Dimension</th></tr><tr><td>Room (one section of the 40 × 24 ft exhibit)</td><td>10′ × 24′, walls 8′ tall</td></tr><tr><td>Divider thickness</td><td>4½″</td></tr><tr><td>Doorways</td><td>7′-6″</td></tr><tr><td>Clear walkway</td><td>≥ 6′ target; 16′-10″ between table and counter</td></tr><tr><td>Adult eye height</td><td>5′-3″</td></tr></table><p style="opacity:.7">The photo gallery frames and counter are as already on the model. Where the page gives no size, “Suggested” sizes come from your list.</p><b>Temporary ideas for the empty short walls (for discussion)</b><table><tr><th>Item</th><th>Qty</th><th>Dimensions</th><th>Status</th></tr><tr><td>Wall shelf, east and west dining-side walls</td><td>2</td><td>4′ × 10″ × 1″, top at 4′-6″</td><td>Temporary idea</td></tr><tr><td>Brass pots on the shelves</td><td>4</td><td>6″ ⌀ × 5″</td><td>Temporary idea</td></tr><tr><td>Grain jars on the shelves</td><td>4</td><td>4″ ⌀ × 6″</td><td>Temporary idea</td></tr><tr><td>Steel bowls on the shelves</td><td>2</td><td>7″ ⌀ × 1½″</td><td>Temporary idea</td></tr><tr><td>Brass plates or thalis on the wall</td><td>10 (5 per wall)</td><td>10–14″ ⌀, centered at 5′-6″</td><td>Temporary idea</td></tr><tr><td>Maroon and gold block-print fabric</td><td>2</td><td>3′ × 5′, hung 2′-0″ to 7′-0″</td><td>Temporary idea</td></tr><tr><td>Utensil rail, east wall above the counter</td><td>1</td><td>4′ long at 5′-0″</td><td>Temporary idea</td></tr><tr><td>Hanging utensils</td><td>5</td><td>8–12″ long</td><td>Temporary idea</td></tr><tr><td>Marigold toran (fire-retardant)</td><td>2</td><td>7′-6″ wide × 12″ drop, from 7′-6″</td><td>Temporary idea</td></tr></table><b>Photo frames (as on the model)</b>
+<table><tr><th>#</th><th>Frame (in)</th><th>Print (in, mat on)</th><th>Center height</th><th>Wall</th></tr><tr><td>F19</td><td>12½ × 12½ square</td><td>9 × 9</td><td>6′-1½″</td><td>North, left top</td></tr><tr><td>F20</td><td>8 × 10 portrait</td><td>5 × 7</td><td>4′-9¼″</td><td>North, left bottom</td></tr><tr><td>F21</td><td>11 × 17 portrait</td><td>8 × 14</td><td>5′-6″</td><td>North</td></tr><tr><td>F22</td><td>18 × 24 portrait</td><td>12 × 18</td><td>5′-6″</td><td>North, centred</td></tr><tr><td>F23</td><td>11 × 14 portrait</td><td>8 × 10</td><td>5′-6″</td><td>North</td></tr><tr><td>F24</td><td>8 × 10 portrait</td><td>5 × 7</td><td>6′-0½″</td><td>North, right top</td></tr><tr><td>F25</td><td>8 × 10 landscape</td><td>7 × 5</td><td>4′-10½″</td><td>North, right bottom</td></tr><tr><td>F26</td><td>18 × 24 portrait</td><td>12 × 18</td><td>5′-3″</td><td>South, buy</td></tr><tr><td>F27</td><td>18 × 24 portrait</td><td>12 × 18</td><td>5′-3″</td><td>South, buy</td></tr><tr><td>F28</td><td>18 × 24 portrait</td><td>12 × 18</td><td>5′-3″</td><td>South, buy</td></tr></table><span style="opacity:.7">Frame sizes are drawn as stated; the mat and print sit inside, to scale.</span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const V=document.getElementById('v');
+const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));V.appendChild(R.domElement);
+const S=new THREE.Scene();
+const C=new THREE.PerspectiveCamera(45,1,.1,300);
+const O=new THREE.OrbitControls(C,R.domElement);O.enableDamping=true;O.maxPolarAngle=Math.PI/2.02;
+const M=(c,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.85},o));
+const sand=M(0xf4f2ed),maroon=M(0x7a1f2b),stone=M(0xf4f2ed),floor=M(0x9a7b5b,{roughness:.95});
+const wallMats=[sand,maroon,stone];
+function B(w,h,d,x,y,z,m,g){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y+h/2,z);(g||S).add(o);return o}
+function Cy(r,h,x,y,z,m,g,s=24){const o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,s),m);o.position.set(x,y+h/2,z);(g||S).add(o);return o}
+function tex(w,h,f){const c=document.createElement('canvas');c.width=w;c.height=h;f(c.getContext('2d'),w,h);return new THREE.CanvasTexture(c)}
+function Pl(w,h,t,x,y,z,ry,g){const o=new THREE.Mesh(new THREE.PlaneGeometry(w,h),M(0xffffff,{map:t,roughness:1}));o.position.set(x,y,z);o.rotation.y=ry||0;(g||S).add(o);return o}
+// floor
+B(10,.1,24,0,-.1,0,floor);
+// walls (per-face materials: +x,-x,+y,-y,+z,-z)
+const t=.375,H=8;
+function W(w,h,d,x,y,z,faces){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),faces);o.position.set(x,y+h/2,z);S.add(o)}
+const ev=[stone,sand,stone,stone,stone,stone],wv=[sand,stone,stone,stone,stone,stone];
+W(t,H,8.25,5+t/2,0,-7.875,ev);W(t,H,8.25,5+t/2,0,7.875,ev);W(t,.5,7.5,5+t/2,7.5,0,ev);
+W(t,H,8.25,-5-t/2,0,-7.875,wv);W(t,H,8.25,-5-t/2,0,7.875,wv);W(t,.5,7.5,-5-t/2,7.5,0,wv);
+W(10,H,t,0,0,-12-t/2,[stone,stone,stone,stone,sand,stone]);
+W(10,H,t,0,0,12+t/2,[stone,stone,stone,stone,stone,maroon]);
+// accent: maroon strip behind panel not needed; panel on east divider
+// gallery wall (north): F19-F25 true to size, F22 centred on the wall
+const cols=['#c9803a','#8a4a2b','#e0b25a','#a24a38','#d9a55c','#7a5a3a'];
+const FLB=[];const q=n=>Math.floor(n)+({0:'',.25:'¼',.5:'½',.75:'¾'}[n%1]||'');
+const matT=tex(8,8,(g,a,b)=>{g.fillStyle='#f4ecdc';g.fillRect(0,0,a,b)});
+function fr(id,x,cy,fw,fh,pw,ph,z,dir,ci){const w=fw/12,h=fh/12,ry=dir<0?Math.PI:0;
+B(w,h,.1,x,cy-h/2,z+dir*.05,M(0xffffff));
+Pl(w-.14,h-.14,matT,x,cy,z+dir*.101,ry);
+Pl(pw/12,ph/12,tex(64,64,(g,a,b)=>{g.fillStyle=cols[ci%6];g.fillRect(0,0,a,b);g.fillStyle='rgba(255,255,255,.25)';g.fillRect(8,8,a-16,14)}),x,cy,z+dir*.103,ry);
+FLB.push([id+' '+q(fw)+'×'+q(fh),x,cy+h/2+.15,z+dir*.3])}
+// north wall: centrepiece + two side groups, 7 in between columns, 5 in between stacked frames
+// [id, frame w, frame h, print w, print h, centre x (in from wall centre), centre height (in)]
+const D=[['F19',12.5,12.5,9,9,-40.25,73.5],['F20',8,10,5,7,-40.25,57.25],['F21',11,17,8,14,-21.5,66],['F22',18,24,12,18,0,66],['F23',11,14,8,10,21.5,66],['F24',8,10,5,7,39,72.5],['F25',10,8,7,5,39,58.5]];
+D.forEach((f,i)=>fr(f[0],f[5]/12,f[6]/12,f[1],f[2],f[3],f[4],-12,1,i));
+// tasting wall (south), laid out from the left as you face it (x = 5 - u):
+// three 18 x 24 frames, centre 5'-3", 2 in apart, 10 in from the left corner;
+// three staggered shelves 24 x 6 x 1 1/2 in, tops at 75, 63 3/4, 52 1/2 in
+const U=u=>5-u,FW=18/12,GP=2/12,L0=10/12;
+['F26','F27','F28'].forEach((id,i)=>fr(id,U(L0+FW/2+i*(FW+GP)),63/12,18,24,12,18,12,-1,i));
+const shM=M(0xf2ece0);
+[[75,8.1667],[63.75,7.1667],[52.5,8.1667]].forEach(a=>B(2,.125,.5,U(a[1]),a[0]/12-.125,11.75,shM));
+// counter flush in the east corner of the south wall: cabinet base 8' x 2' x 3' high,
+// marble top 100 x 26 x 3/4 in (2 in overhang at the front and at the open end, top touches the east wall)
+const marble=tex(1024,264,(g,w,h)=>{g.fillStyle='#f4f1ec';g.fillRect(0,0,w,h);let sd=11;const r=()=>(sd=(sd*9301+49297)%233280)/233280;
+for(let k=0;k<16;k++){g.strokeStyle='rgba(105,110,122,'+(.12+r()*.3)+')';g.lineWidth=.6+r()*2.4;g.beginPath();let y=r()*h;g.moveTo(0,y);for(let t=1;t<=16;t++){y+=(r()-.4)*46;g.lineTo(t*w/16,y)}g.stroke()}});
+const mSide=M(0xf1eee8,{roughness:.3}),mTop=M(0xffffff,{map:marble,roughness:.25});
+B(100/12,.0625,26/12,5-50/12,3,12-13/12,[mSide,mSide,mTop,mSide,mSide,mSide]);
+const cab=M(0xe8e0d0,{roughness:.6}),hw=M(0x9a9a9a,{metalness:.6,roughness:.4});
+B(8,2.667,2,5-1/6-4,.333,11,cab);B(8,.333,1.75,5-1/6-4,0,11.125,M(0x3a302a));
+for(let i=0;i<4;i++){const c=3.8333-2*i;B(1.94,2.5,.04,c,.4167,10-.02,M(0xf1ead9,{roughness:.55}));B(.03,.4,.05,c+(i%2?.8:-.8),2.3,10-.06,hw)}
+// ===== exhibit lighting (gym lights off, nothing from above) + everything on the Bhojan list =====
+function V3(x,y,z){return new THREE.Vector3(x,y,z)}
+const Y=V3(0,1,0),N=V3(0,0,1),Sn=V3(0,0,-1),dark=M(0x1b1b1b,{roughness:.5}),amb=new THREE.HemisphereLight(0xffe9cf,0x6a5646,.6);S.add(amb);
+const L=new THREE.Group();S.add(L);
+function beam(a,b,ang,col){const d=a.clone().sub(b),len=d.length(),c=new THREE.Mesh(new THREE.ConeGeometry(len*Math.tan(ang),len,28,1,true),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.07,depthWrite:false,side:2}));c.position.copy(a).add(b).multiplyScalar(.5);c.quaternion.setFromUnitVectors(Y,d.normalize());L.add(c)}
+function spotL(col,i,dist,ang,head,tg){const sl=new THREE.SpotLight(col,i,dist,ang,.65,1);sl.position.copy(head);sl.target.position.copy(tg);L.add(sl,sl.target);beam(head,tg,ang,col)}
+// URTOM 3W plug-in spot: plate screwed to the wall, arm, head aimed at the target
+function wspot(x,y,z,n,tx,ty,tz){const b=V3(x,y,z),h=b.clone().addScaledVector(n,.32),t=V3(tx,ty,tz);
+const p=new THREE.Mesh((n.x?new THREE.BoxGeometry(.05,.3,.3):new THREE.BoxGeometry(.3,.3,.05)),dark);p.position.copy(b).addScaledVector(n,.03);L.add(p);
+const a=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,.3,8),dark);a.position.copy(b).addScaledVector(n,.17);a.quaternion.setFromUnitVectors(Y,n);L.add(a);
+const hd=new THREE.Mesh(new THREE.CylinderGeometry(.13,.17,.34,16),M(0x222222,{emissive:0xffcf96,emissiveIntensity:.35}));hd.position.copy(h);hd.quaternion.setFromUnitVectors(Y,h.clone().sub(t).normalize());L.add(hd);
+spotL(0xffd2a0,1.5,22,.32,h,t)}
+// Craftersmark 16 in cordless picture bar, 2700K
+function pbar(x,y,z,az,n,tx,ty,tz){B(az?.14:1.333,.14,az?1.333:.14,x,y,z,M(0x151515,{emissive:0xffbf7a,emissiveIntensity:.5}),L);spotL(0xffbf7a,1.1,10,.55,V3(x,y+.07,z).addScaledVector(n,.3),V3(tx,ty,tz))}
+wspot(-2.6,7.5,-12,N,-2.6,5.2,-12);wspot(2.6,7.5,-12,N,2.6,5.2,-12);       // 7'-6" over the gallery wall
+wspot(5,6.5,-8.2,V3(-1,0,0),.9,2.6,-8.2);wspot(-5,6.5,-8.2,V3(1,0,0),-.9,2.6,-8.2);  // 6'-6" on each short wall, aimed at the dining table
+wspot(5,6.5,10.9,V3(-1,0,0),1,3.3,11);  // 6'-6" on the east wall above the counter
+pbar(-4.9,7.68,8.5,true,V3(1,0,0),-5,4.5,8.5);pbar(1.75,7.68,11.9,false,Sn,1.75,5.2,12); // 7'-9" bars: panel, three frames
+// ---- shared materials
+const wood=M(0x8a6240),ply=M(0xc9a36e),cloth=M(0x7a1f2b,{roughness:1}),steel=M(0xcfd3d6,{metalness:.6,roughness:.35}),brass=M(0xc9a23a,{metalness:.7,roughness:.35}),T=3.0625;
+// ---- Bhojan panel 4 x 6 ft, 1'-6" to 7'-6", east divider; Annakut QR 4 x 4 in (drawn at true size)
+const pt=tex(1200,1800,(g,w,h)=>{g.fillStyle='#6b1f2a';g.fillRect(0,0,w,h);g.fillStyle='#e8c46a';g.fillRect(50,50,w-100,14);g.fillRect(50,h-64,w-100,14);g.textAlign='center';
+g.font='bold 190px Georgia';g.fillText('BHOJAN',w/2,420);g.font='italic 70px Georgia';g.fillStyle='#f6e8d0';g.fillText('The dining room',w/2,520);
+g.fillStyle='#fff';g.fillRect(535,1475,130,130);g.fillStyle='#000';let sd=7;for(let i=0;i<11;i++)for(let j=0;j<11;j++){sd=(sd*73+17)%101;if(sd%2)g.fillRect(550+i*9,1490+j*9,9,9)}
+[[550,1490],[622,1490],[550,1562]].forEach(p=>{g.fillStyle='#000';g.fillRect(p[0],p[1],27,27);g.fillStyle='#fff';g.fillRect(p[0]+4,p[1]+4,19,19);g.fillStyle='#000';g.fillRect(p[0]+9,p[1]+9,9,9)});
+g.fillStyle='#f6e8d0';g.font='40px Georgia';g.fillText('Annakut darshan times',w/2,1665)});
+Pl(4,6,pt,-5+.02,4.5,8.5,Math.PI/2);
+// ---- dining table from your drawing: 2x4 base 66 x 30 x 30 in, 3/4 in plywood top 72 x 36 in (3 in overhang), maroon cloth 8 x 5 ft
+const hb=1.5/12,wb=3.5/12,FZ=-8.5,clothG=new THREE.Group();S.add(clothG);
+[-1,1].forEach(a=>[-1,1].forEach(b=>B(wb,2.5,hb,a*(2.75-wb/2),0,FZ+b*(1.25-1.5*hb),wood)));      // 4 legs, 30 in
+[-1,1].forEach(k=>{[2.5-wb,.7].forEach(y=>{B(5.5,wb,hb,0,y,FZ+k*(1.25-hb/2),wood);B(hb,wb-.004,2.496,k*(2.75-hb/2),y,FZ,wood)});B(hb,wb-.004,2.496,k*11/12,2.5-wb,FZ,wood)}); // long rails, short rails, 2 top cross supports
+B(hb,wb-.004,2.496,0,.7,FZ,wood);                                                                  // bottom centre cross support
+B(6,.0625,3,0,2.5,FZ,ply);                                                                         // plywood top
+B(6.02,.012,3.02,0,2.5625,FZ,cloth,clothG);[-1,1].forEach(k=>{B(.012,1,3.02,k*3.01,1.5625,FZ,cloth,clothG);B(6.02,1,.012,0,1.5625,FZ+k*1.51,cloth,clothG)});
+B(5,.01,1,0,2.5745,-9.3,M(0xe9dcb8));[-1,1].forEach(k=>B(.04,.012,1,k*2.5,2.5745,-9.3,M(0xe0b25a))); // 5 x 1 ft runner
+const fc=[0xc9803a,0x8a9a4a,0xb0443a,0xe0b25a];
+for(let i=0;i<4;i++){const x=-1.8+1.2*i;Cy(.54,.04,x,2.5745,-7.8,steel,null,32);Cy(.2,.02,x-.1,2.6145,-7.68,M(0xd9a35a));[[-.25,-.28],[.2,-.3],[.3,.08]].forEach((d,k)=>{Cy(.12,.09,x+d[0],2.6145,-7.8+d[1],steel,null,16);Cy(.1,.02,x+d[0],2.6945,-7.8+d[1],M(fc[(i+k)%4]),null,16)})} // 4 thalis 13 in + food sets
+const al=tex(96,64,(g,w,h)=>{g.fillStyle='#fff';g.fillRect(0,0,w,h);g.fillStyle='#b22';g.font='bold 16px sans-serif';g.textAlign='center';g.fillText('ALLERGENS',w/2,28);g.fillStyle='#222';g.fillText('see label',w/2,50)});
+[-1.5,1.5].forEach(x=>{B(14/12,.05,10/12,x,2.5745,-9.3,steel);for(let i=0;i<3;i++)for(let j=0;j<2;j++)B(.22,.14,.22,x-.35+i*.35,2.6245,-9.3-.18+j*.36,M(fc[(i+j)%4]));const a=Pl(.25,.1667,al,x,2.5825,-8.62,0);a.rotation.x=-Math.PI/2}); // 2 tasting trays + 3 x 2 in allergen labels
+const rs=tex(150,210,(g,w,h)=>{g.fillStyle='#fffaf0';g.fillRect(0,0,w,h);g.fillStyle='#6b1f2a';g.font='bold 22px Georgia';g.textAlign='center';g.fillText('Take a',w/2,70);g.fillText('recipe',w/2,100);g.fillRect(25,130,100,4)});
+B(.45,.03,.25,2.6,2.5745,-7.9,steel);Pl(5/12,7/12,rs,2.6,2.8625,-7.95,0);       // recipe stand 5 x 7 in
+B(4/12,.12,6/12,-2.6,2.5745,-7.9,M(0xffffff));                                 // take-home recipe cards 4 x 6 in
+B(1,1.5,1,-4.4,0,4.8,M(0x444b50));                                            // bin 12 x 12 x 18 in at the exit
+B(14/12,.08,.2,-3.9,0,-11.8,M(0xf2f2f2));                                     // power strip, 14 in
+// ---- kitchen: on the counter (surface 3'-0 3/4")
+const gl=M(0xcfe8ee,{transparent:true,opacity:.28,roughness:.1});
+for(let i=0;i<6;i++){const x=.55+.8*i;Cy(.25,.833,x,T,11,gl,null,24);Cy(.22,.5,x,T,11,M(fc[i%4]),null,24);Cy(.26,.05,x,T+.833,11,steel,null,24)}  // 6 snack jars 6 in x 10 in
+Cy(.333,.25,-1.2,T,10.9,steel,null,32);for(let k=0;k<7;k++){const a=k*Math.PI/3;Cy(.075,.02,-1.2+(k?.2*Math.cos(a):0),T+.25,10.9+(k?.2*Math.sin(a):0),M(fc[k%4]),null,16)} // masala dabba 8 in x 3 in
+Cy(.22,.45,-.35,T,10.9,steel,null,24);for(let i=0;i<10;i++){const a=i*.628,len=[4,6,8,10,12,14,5,7,9,11][i]/12,u=Cy(.018,len,-.35+.1*Math.cos(a),T+.12,10.9+.1*Math.sin(a),i%2?brass:steel,null,8);u.rotation.z=.15*Math.cos(a);u.rotation.x=.15*Math.sin(a)} // 10 utensils 4-14 in
+Cy(.2,.06,-2.8,T,11,dark);Cy(.03,.85,-2.8,T,11,dark,null,8);Cy(.4167,.5,-2.8,T+.833,11,M(0xffe2a8,{emissive:0xffbf7a,emissiveIntensity:.7}),L,24);
+const lp=new THREE.PointLight(0xffbf7a,.9,13,1);lp.position.set(-2.8,T+1.1,11);L.add(lp);      // counter lamp 10 x 10 x 16 in
+const sk=tex(150,210,(g,w,h)=>{g.fillStyle='#fffaf0';g.fillRect(0,0,w,h);g.fillStyle='#222';g.font='bold 20px Georgia';g.textAlign='center';g.fillText('Spice key',w/2,34);g.font='16px Georgia';for(let i=1;i<=8;i++)g.fillText(i+' . . . . . .',w/2,45+i*19)});
+B(.45,.03,.2,-2,T,10.3,steel);Pl(5/12,7/12,sk,-2,T+.31,10.3,Math.PI);                         // spice answer key 5 x 7 in
+B(7,.02,2,.833,0,8.9,M(0xc99a4a));B(6.7,.03,1.7,.833,0,8.9,M(0x7a2433));                     // runner rug 7 x 2 ft
+// 8 covered spice jars 3 x 4 in on the shelves, each with a 2 in numbered sticker
+const stk=n=>tex(64,64,(g,w,h)=>{g.fillStyle='#fff';g.fillRect(0,0,w,h);g.fillStyle='#b22';g.font='bold 44px sans-serif';g.textAlign='center';g.fillText(n,32,48)});
+const jc=[0xb5632f,0x7a8a3a,0xc4553a,0xd9a53a,0x8a4a2b,0x6a7a4a,0xb0443a,0xe0b25a];let nn=0;
+[[6.25,[-3.67,-3.17,-2.67]],[5.3125,[-2.67,-2.17,-1.67]],[4.375,[-3.42,-2.92]]].forEach(r=>r[1].forEach(x=>{Cy(.125,.333,x,r[0],11.75,M(jc[nn%8]),null,16);Cy(.13,.04,x,r[0]+.333,11.75,steel,null,16);const c=new THREE.Mesh(new THREE.CircleGeometry(.0833,24),M(0xffffff,{map:stk(++nn),roughness:1}));c.position.set(x,r[0]+.17,11.75-.127);c.rotation.y=Math.PI;S.add(c)}));
+// ===== TEMPORARY IDEAS (for discussion): fill the empty short walls =====
+const tempG=new THREE.Group();S.add(tempG);const TLB=[];
+const sph=(r,x,y,z,m)=>{const o=new THREE.Mesh(new THREE.SphereGeometry(r,12,10),m);o.position.set(x,y,z);tempG.add(o);return o};
+const fab=tex(300,500,(g,w,h)=>{g.fillStyle='#7a1f2b';g.fillRect(0,0,w,h);g.fillStyle='#e0b25a';for(let y=25;y<h;y+=50)for(let x=(y/50%2?25:50);x<w;x+=50){g.beginPath();g.moveTo(x,y-9);g.lineTo(x+7,y);g.lineTo(x,y+9);g.lineTo(x-7,y);g.fill()}g.fillRect(0,0,w,8);g.fillRect(0,h-8,w,8)});
+const pm=M(0xb8892a,{metalness:.6,roughness:.4}),pin=M(0x8a6a1a,{metalness:.5,roughness:.5}),zc=-6.6;
+[1,-1].forEach(sg=>{const wx=sg*5,ry=sg>0?-Math.PI/2:Math.PI/2,nm=sg>0?'east':'west';
+Pl(3,5,fab,wx-sg*.02,4.5,zc,ry,tempG);                                                  // maroon + gold fabric 3 x 5 ft, 2'-0" to 7'-0"
+const sx=wx-sg*10/24;B(10/12,1/12,4,sx,4.5-1/12,zc,wood,tempG);                         // shelf 4 ft x 10 in x 1 in, top 4'-6"
+[-1.4,1.4].forEach(d=>Cy(.25,.417,sx,4.5,zc+d,pm,tempG,20));                            // 2 brass pots 6 in x 5 in
+[-.7,.7].forEach(d=>{Cy(.1667,.5,sx,4.5,zc+d,M(0xcfe8ee,{transparent:true,opacity:.35}),tempG,16);Cy(.14,.35,sx,4.5,zc+d,M(0xd9a53a),tempG,16)}); // 2 grain jars 4 in x 6 in
+Cy(.3,.12,sx,4.5,zc,steel,tempG,24);                                                    // steel bowl
+[[0,0,12],[-1.05,0,10],[1.05,0,10],[-.55,.9,10],[.55,.9,10]].forEach(p=>{const r=p[2]/24,x=wx-sg*.035;Cy(r,.03,x,5.5+p[1]-.015,zc+p[0],pm,tempG,32).rotation.z=Math.PI/2;Cy(r*.7,.034,x,5.5+p[1]-.017,zc+p[0],pin,tempG,32).rotation.z=Math.PI/2}); // 5 plates 10-14 in
+const tx=wx-sg*.07;B(.05,.1,7.5,tx,7.4,0,M(0xf2a31b),tempG);                           // marigold toran 7'-6" wide, 12 in drop
+for(let i=0;i<15;i++){const z=-3.5+i*.5,len=i%2?.6:1;Cy(.012,len,tx,7.4-len,z,M(0x2f6b2f),tempG,6);sph(.075,tx,7.4-len,z,M(i%2?0xe86a10:0xf2a31b))}
+const t='TEMP IDEA · ';TLB.push([t+'maroon fabric 3′ × 5′ · 2′-0″ to 7′-0″',sg*4.8,7.45,zc],[t+'5 plates 10–14″ ⌀',sg*4.8,7.0,zc],[t+'shelf 4′ × 10″ × 1″ at 4′-6″ · pots 6″ ⌀ × 5″ · jars 4″ ⌀ × 6″',sg*4.5,4.15,zc],[t+'marigold toran 7′-6″ wide, 12″ drop',sg*4.7,8.1,0])});
+// utensil rail on the east wall above the counter: 4 ft at 5'-0", utensils 8-12 in
+B(.06,.05,4,4.94,5.0,9.9,pm,tempG);
+[[-1.4,12,steel],[-.7,12,steel],[0,11,wood],[.7,10,wood],[1.4,10,wood]].forEach((u,i)=>{Cy(.02,u[1]/12,4.9,5-u[1]/12,9.9+u[0],u[2],tempG,8);if(i<3)sph(.08,4.9,5-u[1]/12,9.9+u[0],u[2])});
+TLB.push(['TEMP IDEA · utensil rail 4′ at 5′-0″ · utensils 8–12″',4.7,5.7,9.9]);
+// walkway (target 6 ft minimum): table edge to counter, drawn off by default
+const wk=new THREE.Mesh(new THREE.PlaneGeometry(9.6,16.8),new THREE.MeshBasicMaterial({color:0x3aa65a,transparent:true,opacity:.22,depthWrite:false}));wk.rotation.x=-Math.PI/2;wk.position.set(0,.05,1.4);wk.visible=false;S.add(wk);
+// labels
+const LB=[['Room 10′ × 24′ · walls 8′ · dividers 4½″',0,8.3,-2],['Door from Bhusha · 7′-6″',5.2,7.9,0],['Exit to Bhajan · 7′-6″',-5.2,7.9,0],
+['Bhojan panel 4′ × 6′ · hung 1′-6″ to 7′-6″',-4.9,6.9,8.5],['Annakut QR 4″ × 4″',-4.9,2.4,8.5],['Picture bar 16″ · 7′-9″ · 2700K',-4.7,8.4,8.5],['Picture bar 16″ · 7′-9″ · 2700K',1.75,8.4,11.9],
+['URTOM spot · 7′-6″ · 3000K',-2.6,8.3,-11.7],['URTOM spot · 7′-6″ · 3000K',2.6,8.3,-11.7],['URTOM spot · 6′-6″ · 3000K',4.7,7.3,-8.2],['URTOM spot · 6′-6″ · 3000K',-4.7,7.3,-8.2],['URTOM spot · 6′-6″ · 3000K',4.7,7.3,10.9],
+['Plywood top 6′ × 3′ × ¾″ · 3″ overhang',0,3.6,-8.5],['2×4 base 5′-6″ × 2′-6″ × 2′-6″ · table 2′-6¾″',2.4,1.3,-7.3],['Maroon tablecloth 8′ × 5′',-3.0,1.7,-8.5],['Runner 5′ × 1′',0,2.8,-9.9],['4 thalis · 12–14″',0,3.0,-7.4],['2 tasting trays 14″ × 10″',1.5,3.0,-9.9],['Allergen label 3″ × 2″',-1.5,2.7,-8.55],['Recipe stand 5″ × 7″',2.6,3.4,-7.9],['Recipe cards 4″ × 6″',-2.6,2.9,-7.9],['Bin 12″ × 12″ × 18″',-4.4,1.9,4.8],['Power strip 14″',-3.9,.5,-11.8],
+['Marble top 100″ × 26″ × ¾″ · surface 3′-0¾″',.83,2.5,9.8],['Cabinet base 8′ × 2′ × 3′',.83,1.1,9.9],['Runner rug 7′ × 2′',.83,.3,8.9],['6 snack jars 6″ ⌀ × 10″',2.2,4.3,11],['Masala dabba 8″ ⌀ × 3″',-1.2,3.7,10.9],['10 utensils 4–14″',-.35,4.6,10.9],['Counter lamp 10″ × 10″ × 16″',-2.8,4.9,11],['Spice answer key 5″ × 7″',-2,3.9,10.3],
+['8 spice jars 3″ ⌀ × 4″ · 2″ stickers',-2.9,7.2,11.75],['3 shelves · 24″ × 6″ × 1½″ · tops 4′-4½″ / 5′-3¾″ / 6′-3″',-3,7.9,11.75],['10′',0,.2,-12.8],['24′',5.8,.2,12]];
+const mk=(a,t)=>{const e=document.createElement('div');e.className='lb'+(t=='f'?' fl':t=='t'?' tmp':'');e.textContent=a[0];V.appendChild(e);return{e,t,p:V3(a[1],a[2],a[3])}};
+const lbs=LB.map(a=>mk(a,'l')).concat(FLB.map(a=>mk(a,'f'))).concat(TLB.map(a=>mk(a,'t')));
+let showLb=true,showFr=true,showTmp=true;
+function size(){const w=V.clientWidth,h=V.clientHeight;R.setSize(w,h);C.aspect=w/h;C.updateProjectionMatrix()}
+addEventListener('resize',size);size();
+function view(p,t){C.position.set(...p);O.target.set(...t);O.update()}
+const views={Overview:[[-17,15,26],[0,2.5,0]],'Dining wall':[[0,5.5,7],[0,5.5,-12]],'Tasting wall':[[-.5,5.3,-2],[-.5,5,12]],Counter:[[-3.5,6,3],[1,3.3,11]],'Dining table':[[3.8,6,-1],[0,2.5,-8.5]],Panel:[[3,5,5],[-5,4.5,8.5]],'Top down':[[0,40,.01],[0,0,0]]};
+const bar=document.getElementById('bar');
+function btn(txt,fn,tog){const b=document.createElement('button');b.textContent=txt;b.onclick=()=>{fn(b)};bar.appendChild(b);if(tog)b.classList.add('on');return b}
+Object.keys(views).forEach(k=>btn(k,()=>view(...views[k])));
+btn('See-through walls',b=>{b.classList.toggle('on');const on=b.classList.contains('on');wallMats.forEach(m=>{m.transparent=on;m.opacity=on?.16:1;m.depthWrite=!on;m.needsUpdate=true})});
+btn('Frame sizes',b=>{b.classList.toggle('on');showFr=b.classList.contains('on')},1);btn('Dimensions',b=>{b.classList.toggle('on');showLb=b.classList.contains('on')},1);btn('Exhibit lighting',b=>{b.classList.toggle('on');L.visible=b.classList.contains('on')},1);btn('Dim room',b=>{b.classList.toggle('on');amb.intensity=b.classList.contains('on')?.12:.6});btn('Walkway',b=>{b.classList.toggle('on');wk.visible=b.classList.contains('on')});btn('Tablecloth',b=>{b.classList.toggle('on');clothG.visible=b.classList.contains('on')},1);btn('Temporary ideas',b=>{b.classList.toggle('on');const on=b.classList.contains('on');tempG.visible=on;showTmp=on},1);
+view(...views.Overview);
+(function loop(){requestAnimationFrame(loop);O.update();R.render(S,C);const w=V.clientWidth,h=V.clientHeight;
+lbs.forEach(l=>{const v=l.p.clone().project(C);const ok=(l.t=='f'?showFr:l.t=='t'?showTmp:showLb)&&v.z<1;l.e.style.display=ok?'block':'none';if(ok){l.e.style.left=(v.x*.5+.5)*w+'px';l.e.style.top=(-v.y*.5+.5)*h+'px'}})})();
+</script><script>
+(function(){
+var K='bhojan-checklist-v1',saved={};
+try{saved=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){saved={}}
+var boxes=[];
+document.querySelectorAll('.key table').forEach(function(t,ti){
+ var hr=t.rows[0];if(!hr||hr.cells.length<3)return;
+ var th=document.createElement('th');th.textContent='Got it';hr.insertBefore(th,hr.cells[0]);
+ for(var r=1;r<t.rows.length;r++){(function(row){
+  var id=ti+'|'+row.cells[0].textContent+'|'+row.cells[1].textContent;
+  var td=document.createElement('td'),cb=document.createElement('input');
+  cb.type='checkbox';cb.style.cssText='width:18px;height:18px;cursor:pointer';cb.setAttribute('aria-label','Got '+row.cells[0].textContent);
+  cb.checked=!!saved[id];td.appendChild(cb);row.insertBefore(td,row.cells[0]);
+  function upd(){row.style.opacity=cb.checked?.5:1;row.style.textDecoration=cb.checked?'line-through':'none'}upd();
+  cb.onchange=function(){if(cb.checked)saved[id]=1;else delete saved[id];upd();count();try{localStorage.setItem(K,JSON.stringify(saved))}catch(e){}};
+  boxes.push(cb)})(t.rows[r])}
+});
+var key=document.querySelector('.key'),bar=document.createElement('div'),lab=document.createElement('b'),clr=document.createElement('button');
+bar.style.cssText='margin:8px 0;font:13px system-ui,sans-serif';clr.textContent='Clear all ticks';
+clr.onclick=function(){boxes.forEach(function(b){b.checked=false;b.onchange()})};
+bar.appendChild(lab);bar.appendChild(document.createTextNode(' '));bar.appendChild(clr);key.insertBefore(bar,key.firstChild);
+function count(){lab.textContent='Checklist: '+boxes.filter(function(b){return b.checked}).length+' of '+boxes.length+' items ticked'}count();
+})();
+</script>
+</body></html>
